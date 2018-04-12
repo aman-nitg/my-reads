@@ -15,6 +15,14 @@ class BooksApp extends React.Component {
     })
   }
 
+  updateShelf = (shelf, book) => {
+    book.shelf = shelf;
+    this.setState((state) => ({
+      books: state.books.filter(b => b.id !== book.id).concat(book)
+    }));
+    BooksAPI.update(book, shelf)
+  };
+
   render() {
     return (
       <div className="app">
@@ -65,7 +73,7 @@ class BooksApp extends React.Component {
                                 }}>
                               </div>
                               <div className="book-shelf-changer">
-                                <select>
+                                <select value={book.shelf} onChange={(e) => this.updateShelf(e.target.value, book)}>
                                   <option value="none" disabled>Move to...</option>
                                   <option value="currentlyReading">Currently Reading</option>
                                   <option value="wantToRead">Want to Read</option>
@@ -100,7 +108,7 @@ class BooksApp extends React.Component {
                                   backgroundImage: `url(${book.imageLinks.thumbnail})` }}>
                               </div>
                               <div className="book-shelf-changer">
-                                <select>
+                                <select value={book.shelf} onChange={(e) => this.updateShelf(e.target.value, book)}>
                                   <option value="none" disabled>Move to...</option>
                                   <option value="currentlyReading">Currently Reading</option>
                                   <option value="wantToRead">Want to Read</option>
@@ -135,7 +143,7 @@ class BooksApp extends React.Component {
                                   backgroundImage: `url(${book.imageLinks.thumbnail})` }}>
                               </div>
                               <div className="book-shelf-changer">
-                                <select>
+                                <select value={book.shelf} onChange={(e) => this.updateShelf(e.target.value, book)}>
                                   <option value="none" disabled>Move to...</option>
                                   <option value="currentlyReading">Currently Reading</option>
                                   <option value="wantToRead">Want to Read</option>
