@@ -4,6 +4,10 @@ This project is a part of the React Nanodegree Course by Udacity.
 It is a bookshelf app that allows you to select and categorize books you have read, are currently reading, or want to read.
 You can also search for books and categorize them into different shelves from the search page itself.
 
+## Deployed on Heroku
+
+The bookshelf app can be seen live [_here_](https://my-reads-project-aman.herokuapp.com/)
+
 ## Installation and Running
 
 Install all project dependencies with:
