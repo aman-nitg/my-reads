@@ -7,8 +7,7 @@ You can also search for books and categorize them into different shelves from th
 ## Deployed on Heroku
 
 ```js
-The bookshelf app can be seen live [_here_](https://my-reads-project-aman.herokuapp.com/)
-```
+The bookshelf app can be seen live here:``` (https://my-reads-project-aman.herokuapp.com/)
 
 ## Installation and Running
 
